@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-before_action :set_food, only: %i[edit update destroy]
+  before_action :set_food, only: %i[edit update destroy]
 
   def index
     @foods = Food.includes(:user).order(:created_at)
@@ -18,8 +18,7 @@ before_action :set_food, only: %i[edit update destroy]
     @food = Food.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @food.update!(food_params)
